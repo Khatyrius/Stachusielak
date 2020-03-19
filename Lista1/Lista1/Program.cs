@@ -2,10 +2,11 @@
 
 namespace Zadanie1
 {
-    class Program
+    internal class Program
     {
-        static int change;
-        static void Main(string[] args)
+        private static int change;
+
+        private static void Main(string[] args)
         {
             Console.WriteLine("1 = English || 2 = Polski");
             change = int.Parse(Console.ReadLine());
@@ -21,6 +22,7 @@ namespace Zadanie1
                         Console.WriteLine("Witaj Swiecie!");
                         break;
                 }
+
                 change = int.Parse(Console.ReadLine());
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 
 //Rozwiązanie dynamiczne
@@ -8,7 +9,8 @@ namespace Zadanie5b
     {
         static void Main(string[] args)
         {
-            var myDll = Assembly.LoadFile("F:\\Lista1\\Zadanie5DllLibrary\\bin\\Debug\\netcoreapp3.1\\Zadanie5DllLibrary.dll");
+            var dllPath = new FileInfo(@"C:\Users\barto\source\repos\Stachusielak_DOTNET\Lista1\Zadanie5DllLibrary\bin\Debug\netcoreapp3.1\Zadanie5DllLibrary.dll");
+            var myDll = Assembly.LoadFile(dllPath.FullName);
             var classType = myDll.GetType("Zadanie5DllLibrary.Calculate");
             object loadedDll = Activator.CreateInstance(classType);
 
